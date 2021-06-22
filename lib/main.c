@@ -11,5 +11,7 @@ int main()
     insertionSort(B,SIZE_A);
     int32_t C[SIZE_A] = {8,8,8,8,0,0,0,2,1,0};
     selectionSort(C,SIZE_A);
+    int32_t D[SIZE_A] = {8,8,8,8,0,0,0,2,1,0};
+    mergeSort(D,SIZE_A);
     return 0;
 }

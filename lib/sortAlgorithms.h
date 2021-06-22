@@ -4,7 +4,7 @@
 
 #include "stdint.h"
 #include "math.h"
-
+#include "limits.h"
 void swap(int32_t *A,uint32_t i, int32_t j);
 
 /**********************************
@@ -51,5 +51,5 @@ void selectionSort(int32_t *A,uint32_t sizeA);
 
 void mergeSort(int32_t *A,uint32_t sizeA);
 void mergeRecurv(int32_t *A,uint32_t p,uint32_t r);
-void merge(uint32_t p,uint32_t q,uint32_t r);
+void mergee(int32_t *A,uint32_t p,uint32_t q,uint32_t r);
 #endif // SORT_ALGORITHMS_H

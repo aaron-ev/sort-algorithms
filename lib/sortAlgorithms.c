@@ -118,51 +118,57 @@ void selectionSort(int32_t *A,uint32_t sizeA)
 
 void mergeSort(int32_t *A,uint32_t sizeA)
 {
-    mergeRecurv(A,1,sizeA);
+    printf("%d",A[0]);
+    mergeRecurv(A,0,sizeA-1);
 }
 void mergeRecurv(int32_t *A,uint32_t p,uint32_t r)
 {
-    static uint32_t q;
-
+    printf("%d",A[0]);
+    uint32_t q;
     if(p < r)
     {
         q = floor((p + r) / 2);
         mergeRecurv(A,p,q);
         mergeRecurv(A,q + 1,r);
-        merge(A,p,q,r);
+        mergee(A,p,q,r);
    }
 }
 
-void merge(uint32_t p,uint32_t q,uint32_t r)
+void mergee(int32_t *A,uint32_t p,uint32_t q,uint32_t r)
 {
     uint32_t n1 = q - p + 1;
     uint32_t n2 = r - q;
     int32_t L[n1+1],R[n2 + 1];
     uint32_t i,j,k;
 
+    printf("%d",A[0]);
+    printf("%d",A[1]);
+    printf("%d",A[2]);
+
     for(i = 0;i < n1; i = i + 1)
-        L[i] = A[p + i - 1];
+        L[i] = A[p + i];
 
     for(j = 0; j < n2; j = j + 1)
-        R[j] = A[q + j];
+        R[j] = A[q + j + 1];
 
-    L[n1 + 1] = NULL;
-    R[n2 + 1] = NULL;
+    L[n1] = INT_MAX;
+    R[n2] = INT_MAX;
 
-    i = 1;
-    j = 1;
+    i = 0;
+    j = 0;
 
-    for(k = p; k <= r)
+    for(k = p; k <= r; k = k + 1)
     {
         if(L[i] <= R[j])
         {
             A[k] = L[i];
             i++;
         }
-        else if (A[k] = R[j])
-            j++;
         else
-            //Impossible combination
+        {
+            A[k] = R[j];
+            j++;
+        }
     }
 }
 
