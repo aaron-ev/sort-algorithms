@@ -5,7 +5,7 @@
 #include "stdint.h"
 #include "math.h"
 #include "limits.h"
-void swap(int32_t *A,uint32_t i, int32_t j);
+void swap(float *A,uint32_t i, int32_t j);
 
 /**********************************
 *
@@ -19,9 +19,9 @@ void swap(int32_t *A,uint32_t i, int32_t j);
 #define RIGHT(i)    2*i + 2
 
 uint32_t heapSize;
-void maxHeapify(int32_t *A,int32_t i);
-void buildMaxHeap(int32_t *A);
-void heapSort(int32_t *A,uint32_t sizeA);
+void maxHeapify(float *A,int32_t i);
+void buildMaxHeap(float *A);
+void heapSort(float *A,uint32_t sizeA);
 
 
 /**********************************
@@ -31,7 +31,7 @@ void heapSort(int32_t *A,uint32_t sizeA);
 ***********************************
 */
 
-void insertionSort(int32_t *A,uint32_t sizeA);
+void insertionSort(float *A,uint32_t sizeA);
 
 /**********************************
 *
@@ -40,7 +40,7 @@ void insertionSort(int32_t *A,uint32_t sizeA);
 ***********************************
 */
 
-void selectionSort(int32_t *A,uint32_t sizeA);
+void selectionSort(float *A,uint32_t sizeA);
 
 /**********************************
 *
@@ -49,7 +49,17 @@ void selectionSort(int32_t *A,uint32_t sizeA);
 ***********************************
 */
 
-void mergeSort(int32_t *A,uint32_t sizeA);
-void mergeRecurv(int32_t *A,uint32_t p,uint32_t r);
-void mergee(int32_t *A,uint32_t p,uint32_t q,uint32_t r);
+void mergeSort(float *A,uint32_t sizeA);
+void mergeRecurv(float *A,uint32_t p,uint32_t r);
+void mergee(float *A,uint32_t p,uint32_t q,uint32_t r);
+
+/**********************************
+*
+*              Bubble Sort
+*
+***********************************
+*/
+
+void bubbleSort(float *A,uint32_t sizeA);
+
 #endif // SORT_ALGORITHMS_H

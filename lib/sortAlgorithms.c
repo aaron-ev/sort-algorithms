@@ -7,7 +7,7 @@
 
 #include "sortAlgorithms.h"
 
-void swap(int32_t *A,uint32_t i, int32_t j)
+void swap(float *A,uint32_t i, int32_t j)
 {
     int32_t temp;
     temp = A[i];
@@ -21,7 +21,7 @@ void swap(int32_t *A,uint32_t i, int32_t j)
 *
 ***********************************
 */
-void maxHeapify(int32_t *A,int32_t i)
+void maxHeapify(float *A,int32_t i)
 {
     int32_t largest;
     uint32_t l,r;
@@ -42,14 +42,14 @@ void maxHeapify(int32_t *A,int32_t i)
        maxHeapify(A,largest);
     }
 }
-void buildMaxHeap(int32_t *A)
+void buildMaxHeap(float *A)
 {
     int32_t i;
     for(i = floor(heapSize/2);i >= 0;i-- )
          maxHeapify(A,i);
 }
 
-void heapSort(int32_t *A,uint32_t sizeA)
+void heapSort(float *A,uint32_t sizeA)
 {
     heapSize = sizeA;
     int32_t i;
@@ -68,7 +68,7 @@ void heapSort(int32_t *A,uint32_t sizeA)
 *
 ***********************************
 */
-void insertionSort(int32_t *A,uint32_t sizeA)
+void insertionSort(float *A,uint32_t sizeA)
 {
     for (int i = 1; i < sizeA; i++)
     {
@@ -88,7 +88,7 @@ void insertionSort(int32_t *A,uint32_t sizeA)
 *
 ***********************************
 */
-void selectionSort(int32_t *A,uint32_t sizeA)
+void selectionSort(float *A,uint32_t sizeA)
 {
     for (int i = 0; i < sizeA - 1; i++)
     {
@@ -116,14 +116,12 @@ void selectionSort(int32_t *A,uint32_t sizeA)
 ***********************************
 */
 
-void mergeSort(int32_t *A,uint32_t sizeA)
+void mergeSort(float *A,uint32_t sizeA)
 {
-    printf("%d",A[0]);
     mergeRecurv(A,0,sizeA-1);
 }
-void mergeRecurv(int32_t *A,uint32_t p,uint32_t r)
+void mergeRecurv(float *A,uint32_t p,uint32_t r)
 {
-    printf("%d",A[0]);
     uint32_t q;
     if(p < r)
     {
@@ -134,16 +132,12 @@ void mergeRecurv(int32_t *A,uint32_t p,uint32_t r)
    }
 }
 
-void mergee(int32_t *A,uint32_t p,uint32_t q,uint32_t r)
+void mergee(float *A,uint32_t p,uint32_t q,uint32_t r)
 {
     uint32_t n1 = q - p + 1;
     uint32_t n2 = r - q;
     int32_t L[n1+1],R[n2 + 1];
     uint32_t i,j,k;
-
-    printf("%d",A[0]);
-    printf("%d",A[1]);
-    printf("%d",A[2]);
 
     for(i = 0;i < n1; i = i + 1)
         L[i] = A[p + i];
@@ -170,5 +164,24 @@ void mergee(int32_t *A,uint32_t p,uint32_t q,uint32_t r)
             j++;
         }
     }
+}
+/**********************************
+*
+*              Bubble Sort
+*
+***********************************
+*/
+void bubbleSort(float *A,uint32_t sizeA)
+{
+        int32_t i,j;
+
+        for(i = sizeA - 1; i >= 0; i = i - 1)
+        {
+            for(j = 0; j < i; j = j + 1)
+            {
+                if(A[j] > A[j+1])
+                    swap(A,j,j+1);
+            }
+        }
 }
 
