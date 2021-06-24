@@ -18,7 +18,7 @@ void printArray(float *A,uint32_t sizeA)
 }
 void swap(float *A,uint32_t i, int32_t j)
 {
-    int32_t temp;
+    float temp;
     temp = A[i];
     A[i] = A[j];
     A[j] = temp;
@@ -278,10 +278,10 @@ void shellSort(float *A, uint32_t sizeA)
     {
         for (j = i; j < sizeA; j++)
         {
-            for(k = j - i; k >= 0; k = count)
+            for(k = j - i; k >= 0; k = k - i)
             {
                 if (A[k+i] >= A[k])
-                    count = -1;
+                    break;
                 else
                 {
                     count = k - i;
@@ -290,6 +290,29 @@ void shellSort(float *A, uint32_t sizeA)
                     A[k+i] = temp;
                 }
             }
+        }
+    }
+}
+/**********************************
+*
+*               Gnome Sort
+*
+***********************************
+*/
+void gnomeSort(float *A,uint32_t sizeA)
+{
+    int index = 0;
+
+    while(index < sizeA)
+    {
+        if (index == 0)
+            index++;
+        if (A[index] >= A[index - 1])
+            index++;
+        else
+        {
+            swap(A,index,index-1);
+            index--;
         }
     }
 }

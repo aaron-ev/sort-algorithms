@@ -21,5 +21,7 @@ int main()
 
     float G[4] = {1.54,1.53,0,50.50};
     shellSort(G,4);
+    float H[4] = {1.54,1.53,0,50.50};
+    gnomeSort(H,4);
     return 0;
 }
