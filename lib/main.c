@@ -15,5 +15,11 @@ int main()
     mergeSort(D,SIZE_A);
     float E[SIZE_A] = {8,8,8,8,0,0,0,2,1,0};
     bubbleSort(E,SIZE_A);
+
+    float F[SIZE_A] = {8,8,8,8,0,0,0,2,1,0};
+    heapSort_noRecurv(F,SIZE_A);
+
+    float G[4] = {1.54,1.53,0,50.50};
+    shellSort(G,4);
     return 0;
 }

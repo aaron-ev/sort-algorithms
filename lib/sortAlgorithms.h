@@ -5,8 +5,8 @@
 #include "stdint.h"
 #include "math.h"
 #include "limits.h"
-void swap(float *A,uint32_t i, int32_t j);
 
+void swap(float *A,uint32_t i, int32_t j);
 /**********************************
 *
 *              Heap Sort
@@ -23,6 +23,15 @@ void maxHeapify(float *A,int32_t i);
 void buildMaxHeap(float *A);
 void heapSort(float *A,uint32_t sizeA);
 
+/**********************************
+*
+*        Heap Sort no recursively
+*
+***********************************
+*/
+
+void heapSort_noRecurv(float *A,uint32_t sizeA);
+void maxHeapify_noRecurv(float *A,uint32_t startA, uint32_t endA);
 
 /**********************************
 *
@@ -62,4 +71,12 @@ void mergee(float *A,uint32_t p,uint32_t q,uint32_t r);
 
 void bubbleSort(float *A,uint32_t sizeA);
 
+/**********************************
+*
+*              Shell Sort
+*
+***********************************
+*/
+
+void shellSort(float *A, uint32_t sizeA);
 #endif // SORT_ALGORITHMS_H
